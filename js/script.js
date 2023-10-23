@@ -12,6 +12,7 @@
 
 const rowEl = document.getElementById('teamMembers');
 const theBoss = document.getElementById('theBoss');
+const btn = document.querySelector('.btn');
 let ourTeam = [
     {
         name : 'Wayne Barnett',
@@ -50,14 +51,19 @@ let ourTeam = [
     }
 ];
 
+btn.addEventListener('click', () => {
+    const newMember = {
+        name : document.getElementById('name').value,
+        role : document.getElementById('role').value,
+        picture : document.getElementById('picture').value
+    };
+    ourTeam.push(newMember);
+    generateCard(newMember);
+    reset();
+});
+
 for (let i = 0; i < ourTeam.length; i++){
-    const memberCard = generateCard(ourTeam[i])
-    if(i === ourTeam.length - 1){
-        theBoss.append(memberCard)
-    } else{
-        rowEl.append(memberCard);
-    }
-    
+    generateCard(ourTeam[i], i);
     // console.group();
     // console.log(ourTeam[i].name);
     // console.log(ourTeam[i].role);
@@ -66,7 +72,14 @@ for (let i = 0; i < ourTeam.length; i++){
     
 }
 
-function generateCard(member){
+
+function reset(){
+    document.getElementById('name').value = '';
+    document.getElementById('role').value = '';
+    document.getElementById('picture').value = '';
+}
+
+function generateCard(member, i){
     const colEl = document.createElement('div');
     colEl.className = 'col-4 d-flex justify-content-center';
     // console.log(colEl)
@@ -79,8 +92,11 @@ function generateCard(member){
         </div>
     </div>`
 
-    return colEl;
-   
+    if(i === ourTeam.length - 1){
+        theBoss.append(colEl)
+    } else{
+        rowEl.append(colEl);
+    }
     
     
 }
