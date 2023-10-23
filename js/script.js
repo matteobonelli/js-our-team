@@ -29,4 +29,13 @@ let ourTeam = [
         role : 'Graphic Designer',
         picture: 'barbara-ramos-graphic-designer.jpg'
     }
-]
+];
+
+for (let i = 0; i < ourTeam.length; i++){
+    console.group();
+    console.log(ourTeam[i].name);
+    console.log(ourTeam[i].role);
+    console.log(ourTeam[i].picture);
+    console.groupEnd();
+    
+}
