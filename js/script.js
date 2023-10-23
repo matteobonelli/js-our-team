@@ -10,7 +10,8 @@
             </div>
 */
 
-const rowEl = document.querySelector('.row');
+const rowEl = document.getElementById('teamMembers');
+const theBoss = document.getElementById('theBoss');
 let ourTeam = [
     {
         name : 'Wayne Barnett',
@@ -41,12 +42,22 @@ let ourTeam = [
         name : 'Barbara Ramos',
         role : 'Graphic Designer',
         picture: 'barbara-ramos-graphic-designer.jpg'
+    },
+    {
+        name : 'Gino il Gattino',
+        role : 'Mangiatore di Croccantini',
+        picture: 'gino-il-gattino.jpg'
     }
 ];
 
 for (let i = 0; i < ourTeam.length; i++){
     const memberCard = generateCard(ourTeam[i])
-    rowEl.append(memberCard);
+    if(i === ourTeam.length - 1){
+        theBoss.append(memberCard)
+    } else{
+        rowEl.append(memberCard);
+    }
+    
     // console.group();
     // console.log(ourTeam[i].name);
     // console.log(ourTeam[i].role);
