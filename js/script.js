@@ -1,14 +1,4 @@
-/*
-            <div class="col-4 d-flex justify-content-center ">
-                <div class="card">
-                    <img src="img/angela-caroll-chief-editor.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Angela Carrol</h5>
-                      <p class="card-text">Me faccio le pippe a coccia d'ovo</p>
-                    </div>
-                </div>
-            </div>
-*/
+
 
 const rowEl = document.getElementById('teamMembers');
 const theBoss = document.getElementById('theBoss');
